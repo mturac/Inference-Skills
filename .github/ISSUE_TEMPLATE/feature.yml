@@ -1,0 +1,22 @@
+name: Product adapter request
+description: Propose an adapter for a verified product CLI.
+title: "adapter: "
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Public product repository
+    validations:
+      required: true
+  - type: input
+    id: cli
+    attributes:
+      label: Stable CLI command
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: User outcome and evidence artifacts
+    validations:
+      required: true
