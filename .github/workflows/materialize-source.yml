@@ -4,7 +4,7 @@ on:
   push:
     branches: [feat/executable-adapters]
     paths:
-      - ".bootstrap/source.tar.gz.b64"
+      - ".bootstrap/chunks/**"
       - ".github/workflows/materialize-source.yml"
 
 permissions:
@@ -26,7 +26,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          tr -d '\r\n' < .bootstrap/source.tar.gz.b64 | base64 --decode > /tmp/inference-skills.tar.gz
+          cat .bootstrap/chunks/part.* | tr -d '\r\n' | base64 --decode > /tmp/inference-skills.tar.gz
           echo "382c5bfc01e30709ed2af7f617e7e6caf5b9badda2d828f1ae508ed6c1d4f64e  /tmp/inference-skills.tar.gz" | sha256sum --check --strict
           tar -tzf /tmp/inference-skills.tar.gz > /tmp/inference-skills-files.txt
           grep -Fxq './package.json' /tmp/inference-skills-files.txt
