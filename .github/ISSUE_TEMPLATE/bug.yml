@@ -1,0 +1,22 @@
+name: Bug report
+description: Report incorrect adapter behavior.
+title: "bug: "
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Product and adapter evidence
+    validations:
+      required: true
