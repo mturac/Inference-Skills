@@ -1,0 +1,21 @@
+{
+  "name": "@mturac/inference-skills",
+  "version": "0.1.0",
+  "description": "Executable agent-skill adapters for verified vibe-coding products.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "Mehmet Turac",
+  "repository": { "type": "git", "url": "git+https://github.com/mturac/Inference-Skills.git" },
+  "bugs": { "url": "https://github.com/mturac/Inference-Skills/issues" },
+  "homepage": "https://github.com/mturac/Inference-Skills#readme",
+  "keywords": ["agent-skills", "vibe-coding", "infershape", "vibeproof", "coding-agent"],
+  "engines": { "node": ">=22" },
+  "files": ["skills/", "src/", "README.md", "LICENSE", "NOTICE", "CHANGELOG.md"],
+  "scripts": {
+    "check": "node --check src/runner.mjs && node --check skills/analyze-coding-session/scripts/run.mjs && node --check skills/prove-running-product/scripts/run.mjs",
+    "test": "node --test test/*.test.mjs",
+    "verify:skills": "node scripts/verify-skills.mjs",
+    "verify:package": "node scripts/package-smoke.mjs",
+    "verify": "npm run check && npm test && npm run verify:skills && npm run verify:package"
+  }
+}
