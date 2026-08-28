@@ -1,0 +1,28 @@
+name: Bug report
+description: Report incorrect adapter behavior
+title: "bug: "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected product behavior
+    validations:
+      required: true
+  - type: input
+    id: product
+    attributes:
+      label: Product CLI and version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction command
+    validations:
+      required: true
